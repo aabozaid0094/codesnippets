@@ -1,4 +1,5 @@
 /*
+* more related to wordpress and its plugin 'acf'
 * return advanced custom fields in api response under 'ACF' attribute name
 * with a check if its a post or a term or a user
 */
