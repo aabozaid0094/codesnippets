@@ -1,3 +1,4 @@
+<?php
 /*
 * first function extract youtube id form vide link
 * second function take extracted id as parameter and get live views via youtube data api (that require an api key, find more over here: https://developers.google.com/youtube/v3/getting-started)
