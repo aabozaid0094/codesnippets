@@ -1,3 +1,4 @@
+<?php
 /*
 * more related to wordpress and its plugin 'acf'
 * return advanced custom fields in api response under 'ACF' attribute name
