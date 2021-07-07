@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
       $(this).find('.equalized-item').each(function(){
         heighest = ($(this).height() > heighest) ? $(this).height() : heighest;
       });
-      $(this).find('.equalized-item').height(heighest)
+      $(this).find('.equalized-item').height(heighest);
       heighest = 0;
     });
   });
