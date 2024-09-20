@@ -1,12 +1,29 @@
-jQuery(document).ready(function ($) {
-  $(window).on("load", function() {
-    $('.equalized-group').each(function(){
-      let heighest = 0;
-      $(this).find('.equalized-item').each(function(){
-        heighest = ($(this).height() > heighest) ? $(this).height() : heighest;
-      });
-      $(this).find('.equalized-item').height(heighest);
-      heighest = 0;
-    });
-  });
-});
+class HeightEqualizer {
+    constructor(groupClass, itemClass, autoTrigger = false) {
+        this.groupClass = groupClass;
+        this.itemClass = itemClass;
+
+        if (autoTrigger) {
+            window.addEventListener('load', () => this.equalizeHeights());
+        }
+    }
+
+    equalizeHeights() {
+        const parents = document.querySelectorAll(`.${this.groupClass}`);
+        parents.forEach(parent => {
+            const children = parent.querySelectorAll(`.${this.itemClass}`);
+            let highest = 0;
+
+            children.forEach(child => {
+                const childHeight = child.offsetHeight;
+                if (childHeight > highest) {
+                    highest = childHeight;
+                }
+            });
+
+            children.forEach(child => {
+                child.style.height = `${highest}px`;
+            });
+        });
+    }
+}
